@@ -1,0 +1,24 @@
+{
+  "name": "Programowanie-w-Js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Piotr-Les/Programowanie-w-Js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Piotr-Les/Programowanie-w-Js/issues"
+  },
+  "homepage": "https://github.com/Piotr-Les/Programowanie-w-Js#readme"
+}
