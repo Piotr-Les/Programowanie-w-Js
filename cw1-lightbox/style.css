@@ -73,11 +73,16 @@ button:hover {
 	bottom: 0;
 	z-index: 99;
 	background-color: rgba(0, 0, 0, 0.6);
-	transform: scale(0);
+	pointer-events: none;
+	opacity: 0;
 	transition: all 0.3s ease;
 }
 
-.overlay.active,
 .modal.active {
 	transform: scale(1);
+}
+
+.overlay.active {
+	pointer-events: all;
+	opacity: 1;
 }
