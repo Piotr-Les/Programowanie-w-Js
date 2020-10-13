@@ -12,8 +12,12 @@ html {
 	font-size: 10px;
 }
 .gallery {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
 	position: relative;
-	margin: 10% auto;
 }
 .img-wrapper {
 	display: flex;
@@ -54,6 +58,12 @@ button {
 	font-size: 1.8rem;
 	letter-spacing: 0.2rem;
 	background-color: transparent;
+	transition: all 0.3s ease;
+	text-shadow: #333;
+}
+button:hover {
+	background-color: #fff;
+	color: #333;
 }
 .overlay {
 	position: absolute;
