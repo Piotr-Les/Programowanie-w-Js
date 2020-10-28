@@ -51,7 +51,7 @@ function onKeyPress(ev) {
 	}
 	setTimeout(() => {
 		wrap.classList.remove('playing');
-	}, 300);
+	}, 250);
 }
 
 function onRecordBtnClick() {
@@ -60,8 +60,13 @@ function onRecordBtnClick() {
 function onPlayBtnClick() {
 	for (let index = 0; index < recordedSounds.length; index++) {
 		const soundObj = recordedSounds[index];
+		let wrap = document.querySelector(`#${soundObj.id}`).parentElement;
 		setTimeout(() => {
 			playSound(soundObj.id);
+			wrap.classList.add('playing');
+			setTimeout(() => {
+				wrap.classList.remove('playing');
+			}, 250);
 		}, soundObj.time);
 	}
 }
