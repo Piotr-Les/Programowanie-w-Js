@@ -23,7 +23,6 @@ gtargets.forEach((gtarget) => {
 			targetImg.src = `https://picsum.photos/400/200?random=${data}`;
 		});
 	});
-	
 });
 
 modal.addEventListener('click', (e) => {

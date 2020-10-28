@@ -1,0 +1,18 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.audio {
+	margin: 10px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.audio div {
+	width: 100px;
+	height: 100px;
+	background-color: #f4f4f4;
+	margin: 10px;
+}
