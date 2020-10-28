@@ -10,9 +10,17 @@
 	align-items: center;
 	flex-wrap: wrap;
 }
+.playing {
+	border-color: green !important;
+}
 .audio div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100px;
 	height: 100px;
 	background-color: #f4f4f4;
 	margin: 10px;
+	border: 2px solid #f4f4f4;
+	transition: all 0.3s ease;
 }

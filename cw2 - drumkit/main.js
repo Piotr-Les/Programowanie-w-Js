@@ -3,7 +3,7 @@ document
 	.querySelector('#recordBtn')
 	.addEventListener('click', onRecordBtnClick);
 document.querySelector('#playBtn').addEventListener('click', onPlayBtnClick);
-
+const wr = document.querySelectorAll('.audio-wrapper');
 let recordStartTime;
 const recordedSounds = [];
 
@@ -38,6 +38,8 @@ function onKeyPress(ev) {
 			soundName = 'tom';
 			break;
 	}
+	let wrap = document.querySelector(`#${soundName}`).parentElement;
+	wrap.classList.add('playing');
 	if (soundName) {
 		const soundTime = Date.now() - recordStartTime;
 		const soundObj = {
@@ -47,6 +49,9 @@ function onKeyPress(ev) {
 		recordedSounds.push(soundObj);
 		playSound(soundName);
 	}
+	setTimeout(() => {
+		wrap.classList.remove('playing');
+	}, 300);
 }
 
 function onRecordBtnClick() {
