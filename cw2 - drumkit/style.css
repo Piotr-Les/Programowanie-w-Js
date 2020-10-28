@@ -12,6 +12,7 @@
 }
 .playing {
 	border-color: green !important;
+	transform: scale(0.9);
 }
 .audio div {
 	display: flex;
@@ -21,6 +22,6 @@
 	height: 100px;
 	background-color: #f4f4f4;
 	margin: 10px;
-	border: 2px solid #f4f4f4;
-	transition: all 0.3s ease;
+	border: 2px solid transparent;
+	transition: all 0.25s ease;
 }
