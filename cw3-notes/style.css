@@ -2,4 +2,54 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	color: var(--light);
+}
+:root {
+	--dark: #2f2f2f;
+	--light: #fffbfe;
+	--green: #0e7c7b;
+	--pink: #ff007f;
+	--purple: #8b80f9;
+	font-size: 10px;
+}
+body {
+	background-color: var(--green);
+}
+header {
+	font-weight: bold;
+	height: 10vh;
+	font-size: 3rem;
+	background-color: var(--dark);
+	padding: 0 15%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo {
+	letter-spacing: 0.13rem;
+}
+.plus {
+	cursor: pointer;
+	color: var(--pink);
+}
+.form-wrapper {
+	transform: scale(0);
+	background-color: var(--purple);
+	height: 8vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+input[type='text'] {
+	font-size: 2rem;
+	padding: 0 2%;
+	width: 900px;
+	height: 5vh;
+	background-color: var(--dark);
+	outline: none;
+	border: none;
+	border-radius: 6px;
+}
+.notes-cont {
+	min-height: 90vh;
 }
