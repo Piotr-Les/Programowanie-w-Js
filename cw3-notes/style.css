@@ -6,14 +6,18 @@
 }
 :root {
 	--dark: #2f2f2f;
+	--grey: #757575;
 	--light: #fffbfe;
 	--green: #0e7c7b;
 	--pink: #ff007f;
 	--purple: #8b80f9;
 	font-size: 10px;
+	font-family: 'Roboto', sans-serif;
 }
 body {
 	background-color: var(--green);
+	width: 100%;
+	height: 100vh;
 }
 header {
 	font-weight: bold;
@@ -28,28 +32,91 @@ header {
 .logo {
 	letter-spacing: 0.13rem;
 }
-.plus {
-	cursor: pointer;
-	color: var(--pink);
+.search {
+	color: var(--dark);
+	width: 500px;
+	background-color: var(--grey);
+	transition: all 0.3s ease;
 }
-.form-wrapper {
-	transform: scale(0);
-	background-color: var(--purple);
-	height: 8vh;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+.search::placeholder {
+	color: var(--light);
 }
+.search:focus {
+	background-color: var(--light);
+}
+.search:focus,
+.search:focus::placeholder {
+	color: var(--dark);
+}
+
+.input-wrapper {
+	padding: 1rem 0;
+	height: 12vh;
+	width: 50%;
+	margin: 0.7rem auto;
+	transition: all 0.2s ease;
+}
+
 input[type='text'] {
 	font-size: 2rem;
 	padding: 0 2%;
-	width: 900px;
 	height: 5vh;
-	background-color: var(--dark);
+	border-radius: 6px;
 	outline: none;
 	border: none;
-	border-radius: 6px;
 }
+.message,
+.title {
+	background-color: var(--dark);
+	width: 100%;
+	transition: all 0.2s ease;
+}
+.expandable {
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+}
+.expandable > * {
+	margin: 5px;
+}
+.title {
+	margin: 0;
+	max-height: inherit;
+}
+.color-pick {
+	padding-left: 5px;
+	max-height: inherit;
+	display: flex;
+}
+.color-pick > div {
+	cursor: pointer;
+	border-radius: 50%;
+	margin: 0 5px;
+	width: 20px;
+	height: 20px;
+}
+.color-pick > .red {
+	background-color: #d50000;
+}
+.color-pick > .green {
+	background-color: #1b5e20;
+}
+.color-pick > .blue {
+	background-color: #0d47a1;
+}
+.color-pick > .dark {
+	border: 1px solid #fff;
+	background-color: var(--dark);
+}
+.message.expand {
+	border-radius: 6px 6px 0 0;
+}
+.expandable.expand {
+	max-height: 15vh;
+	background-color: var(--dark);
+	border-radius: 0 0 6px 6px;
+}
+
 .notes-cont {
 	min-height: 90vh;
 }

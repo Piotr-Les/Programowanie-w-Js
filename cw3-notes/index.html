@@ -4,19 +4,32 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./style.css" />
-		<title>Notes</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Notepad</title>
 	</head>
 	<body>
 		<header>
-			<div class="logo">Notes</div>
-			<div class="plus">+</div>
+			<div class="logo">Notepad</div>
+			<input type="text" class="search" placeholder="Search for note..." />
 		</header>
-		<div class="form-wrapper">
-			<form class="form">
-				<input placeholder="Utwórz notatkę..." id="message" type="text" />
-			</form>
+		<div class="input-wrapper">
+			<input placeholder="Create a note..." class="message" type="text" />
+			<div class="expandable">
+				<input placeholder="Title" class="title" type="text" />
+				<div class="color-pick">
+					<div class="red"></div>
+					<div class="green"></div>
+					<div class="blue"></div>
+					<div class="dark"></div>
+				</div>
+			</div>
 		</div>
-		<section class="notes-cont"></section>
+		<section class="notes-cont">
+			<div></div>
+		</section>
 		<script type="text/javascript" src="./app.js"></script>
 	</body>
 </html>
