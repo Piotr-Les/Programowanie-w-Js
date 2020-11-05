@@ -8,6 +8,12 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+			integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+			crossorigin="anonymous"
+		/>
 		<title>Notepad</title>
 	</head>
 	<body>
@@ -15,21 +21,20 @@
 			<div class="logo">Notepad</div>
 			<input type="text" class="search" placeholder="Search for note..." />
 		</header>
-		<div class="input-wrapper">
+		<form class="input-wrapper">
 			<input placeholder="Create a note..." class="message" type="text" />
 			<div class="expandable">
 				<input placeholder="Title" class="title" type="text" />
 				<div class="color-pick">
-					<div class="red"></div>
-					<div class="green"></div>
-					<div class="blue"></div>
-					<div class="dark"></div>
+					<div data-color="d50000" class="color"></div>
+					<div data-color="1b5e20" class="color"></div>
+					<div data-color="0d47a1" class="color"></div>
+					<div data-color="2f2f2f" class="color"></div>
 				</div>
+				<input class="sub" type="submit" value="Save" />
 			</div>
-		</div>
-		<section class="notes-cont">
-			<div></div>
-		</section>
+		</form>
+		<section class="notes-list"></section>
 		<script type="text/javascript" src="./app.js"></script>
 	</body>
 </html>

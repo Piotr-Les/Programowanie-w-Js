@@ -15,7 +15,7 @@
 	font-family: 'Roboto', sans-serif;
 }
 body {
-	background-color: var(--green);
+	background-color: var(--purple);
 	width: 100%;
 	height: 100vh;
 }
@@ -24,7 +24,7 @@ header {
 	height: 10vh;
 	font-size: 3rem;
 	background-color: var(--dark);
-	padding: 0 15%;
+	padding: 0 10%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -51,7 +51,7 @@ header {
 
 .input-wrapper {
 	padding: 1rem 0;
-	height: 12vh;
+	height: fit-content;
 	width: 50%;
 	margin: 0.7rem auto;
 	transition: all 0.2s ease;
@@ -95,16 +95,16 @@ input[type='text'] {
 	width: 20px;
 	height: 20px;
 }
-.color-pick > .red {
+.color-pick > :first-child {
 	background-color: #d50000;
 }
-.color-pick > .green {
+.color-pick > :nth-child(2) {
 	background-color: #1b5e20;
 }
-.color-pick > .blue {
+.color-pick > :nth-child(3) {
 	background-color: #0d47a1;
 }
-.color-pick > .dark {
+.color-pick > :last-child {
 	border: 1px solid #fff;
 	background-color: var(--dark);
 }
@@ -112,11 +112,75 @@ input[type='text'] {
 	border-radius: 6px 6px 0 0;
 }
 .expandable.expand {
-	max-height: 15vh;
+	max-height: 20vh;
 	background-color: var(--dark);
 	border-radius: 0 0 6px 6px;
 }
-
-.notes-cont {
-	min-height: 90vh;
+.sub {
+	cursor: pointer;
+	display: block;
+	margin: 5px auto;
+	padding: 5px 10px;
+	font-size: 2rem;
+	border-radius: 6px;
+	background-color: var(--grey);
+	outline: none;
+	border: none;
+	transition: all 0.3s ease;
+}
+.sub:hover {
+	background-color: var(--light);
+	color: var(--dark);
+}
+.notes-list {
+	margin: 0 10%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.note {
+	word-break: break-word;
+	letter-spacing: 0.13rem;
+	margin: 1rem;
+	background-color: var(--dark);
+	width: 250px;
+	min-height: 250px;
+	font-size: 1.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 6px;
+	padding: 0.5rem;
+	position: relative;
+}
+.note > h4 {
+	text-align: center;
+	display: block;
+	width: 80%;
+	margin: 0 10%;
+	font-size: 2rem;
+}
+.note > :nth-child(2) {
+	margin: 0.4rem 0;
+	flex: 1;
+}
+.close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.close:hover {
+	color: var(--pink);
+}
+.pin {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.pin:hover {
+	color: var(--green);
 }
