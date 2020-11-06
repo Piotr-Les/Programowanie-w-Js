@@ -1,4 +1,4 @@
-class keyObj {
+class KeyObj {
 	constructor(selector) {
 		this.uiElement = selector;
 		this.keySoundId = selector.dataset.sound;
