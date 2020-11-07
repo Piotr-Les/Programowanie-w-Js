@@ -60,6 +60,7 @@ header {
 }
 .channel {
 	margin: 0.5rem;
+	display: flex;
 }
 .channel button {
 	font-size: 1.5rem;
@@ -71,4 +72,10 @@ header {
 }
 .record.active {
 	background-color: #fe5f55;
+}
+.play {
+	display: none;
+}
+.play.active {
+	display: block;
 }

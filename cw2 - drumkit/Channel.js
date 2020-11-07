@@ -35,6 +35,7 @@ class Channel {
 		this.beat = [];
 	}
 	stopRecording() {
+		this.playButton.classList.add('active');
 		this.playBeat();
 	}
 	toggleRecording() {

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 	const keys = document.querySelectorAll('.key');
 	const recordButtons = document.querySelectorAll('.record');
+	const playButtons = document.querySelectorAll('.play');
 	let isrecording = false;
 	let objArr = [];
 	let ChanArr = [];
@@ -18,6 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 
+	playButtons.forEach((playButton) => {
+		playButton.addEventListener('click', () => {
+			let channel = ChanArr.find((el) => el.playButton == playButton);
+			channel.playBeat();
+		});
+	});
+
 	document.addEventListener('keydown', (e) => {
 		if (e.repeat) return;
 		const evKey = e.key.toUpperCase();
@@ -27,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			key.playSound();
 		}
 		if (ChanArr.some((el) => el.isrecording == true)) {
-			channel = ChanArr.find((el) => el.isrecording == true);
+			let channel = ChanArr.find((el) => el.isrecording == true);
 			channel.recordkey(key);
 		}
 	});
