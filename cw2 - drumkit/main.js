@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	document.addEventListener('keydown', (e) => {
-		if (e.repeat) return;
 		const evKey = e.key.toUpperCase();
 		let key;
 		if (objArr.some((el) => el.keyLetter == evKey)) {

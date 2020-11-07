@@ -76,6 +76,9 @@ header {
 .play {
 	display: none;
 }
-.play.active {
+.play.show {
 	display: block;
+}
+.play:hover {
+	background-color: #549f93;
 }
