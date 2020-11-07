@@ -19,6 +19,7 @@ class Channel {
 	playBitSound(sound) {
 		let key = sound.key;
 		let keyID = document.getElementById(key.keySoundId);
+		keyID.currentTime = 0;
 		keyID.play();
 		KeyObj.animateUiElement(key.uiElement);
 	}
