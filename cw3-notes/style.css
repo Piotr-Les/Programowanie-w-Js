@@ -23,45 +23,62 @@ header {
 	font-weight: bold;
 	height: 10vh;
 	font-size: 3rem;
+	letter-spacing: 0.13rem;
 	background-color: var(--dark);
-	padding: 0 10%;
+
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 }
 .logo {
 	letter-spacing: 0.13rem;
 }
-.search {
-	color: var(--dark);
-	width: 500px;
-	background-color: var(--grey);
+
+.plus {
+	height: 30px;
+	width: 30px;
+	position: relative;
+}
+.plus.active > :nth-child(2) {
+	transform: rotate(0);
+}
+.plus * {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% 50%);
+	display: block;
+	height: 7px;
+	width: 30px;
+	background-color: var(--pink);
+	cursor: pointer;
 	transition: all 0.3s ease;
 }
-.search::placeholder {
-	color: var(--light);
+.plus > :first-child {
+	margin: auto;
 }
-.search:focus {
-	background-color: var(--light);
-}
-.search:focus,
-.search:focus::placeholder {
-	color: var(--dark);
+.plus > :nth-child(2) {
+	transform: rotate(90deg);
 }
 
 .input-wrapper {
+	display: none;
+	background-color: var(--dark);
+	border-radius: 5px;
 	padding: 1rem 0;
 	height: fit-content;
 	width: 50%;
 	margin: 0.7rem auto;
 	transition: all 0.2s ease;
 }
+.input-wrapper.active {
+	display: block;
+}
 
 input[type='text'] {
 	font-size: 2rem;
 	padding: 0 2%;
 	height: 5vh;
-	border-radius: 6px;
 	outline: none;
 	border: none;
 }
@@ -71,29 +88,23 @@ input[type='text'] {
 	width: 100%;
 	transition: all 0.2s ease;
 }
-.expandable {
-	max-height: 0;
-	overflow: hidden;
-	transition: all 0.2s ease;
-}
-.expandable > * {
-	margin: 5px;
-}
+
 .title {
 	margin: 0;
-	max-height: inherit;
 }
 .color-pick {
+	position: relative;
 	padding-left: 5px;
-	max-height: inherit;
+
 	display: flex;
 }
 .color-pick > div {
 	cursor: pointer;
 	border-radius: 50%;
-	margin: 0 5px;
-	width: 20px;
-	height: 20px;
+	margin: auto 5px;
+	width: 30px;
+	height: 30px;
+	padding: 5px;
 }
 .color-pick > :first-child {
 	background-color: #d50000;
@@ -104,22 +115,17 @@ input[type='text'] {
 .color-pick > :nth-child(3) {
 	background-color: #0d47a1;
 }
-.color-pick > :last-child {
+.color-pick > :nth-child(4) {
 	border: 1px solid #fff;
 	background-color: var(--dark);
 }
-.message.expand {
-	border-radius: 6px 6px 0 0;
-}
-.expandable.expand {
-	max-height: 20vh;
-	background-color: var(--dark);
-	border-radius: 0 0 6px 6px;
-}
+
 .sub {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 	cursor: pointer;
 	display: block;
-	margin: 5px auto;
 	padding: 5px 10px;
 	font-size: 2rem;
 	border-radius: 6px;

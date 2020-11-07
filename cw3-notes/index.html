@@ -19,18 +19,19 @@
 	<body>
 		<header>
 			<div class="logo">Notepad</div>
-			<input type="text" class="search" placeholder="Search for note..." />
+			<div class="plus">
+				<div id="hor"></div>
+				<div id="ver"></div>
+			</div>
 		</header>
 		<form class="input-wrapper">
 			<input placeholder="Create a note..." class="message" type="text" />
-			<div class="expandable">
-				<input placeholder="Title" class="title" type="text" />
-				<div class="color-pick">
-					<div data-color="d50000" class="color"></div>
-					<div data-color="1b5e20" class="color"></div>
-					<div data-color="0d47a1" class="color"></div>
-					<div data-color="2f2f2f" class="color"></div>
-				</div>
+			<input placeholder="Title" class="title" type="text" />
+			<div class="color-pick">
+				<div data-color="d50000" class="color"></div>
+				<div data-color="1b5e20" class="color"></div>
+				<div data-color="0d47a1" class="color"></div>
+				<div data-color="2f2f2f" class="color"></div>
 				<input class="sub" type="submit" value="Save" />
 			</div>
 		</form>
