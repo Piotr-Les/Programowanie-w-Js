@@ -20,13 +20,13 @@
 		<header>
 			<div class="logo">Notepad</div>
 			<div class="plus">
-				<div id="hor"></div>
-				<div id="ver"></div>
+				<div></div>
+				<div></div>
 			</div>
 		</header>
 		<form class="input-wrapper">
-			<input placeholder="Create a note..." class="message" type="text" />
-			<input placeholder="Title" class="title" type="text" />
+			<input placeholder="Create a note..." id="message" type="text" />
+			<input placeholder="Title" id="title" type="text" />
 			<div class="color-pick">
 				<div data-color="d50000" class="color"></div>
 				<div data-color="1b5e20" class="color"></div>
@@ -35,7 +35,10 @@
 				<input class="sub" type="submit" value="Save" />
 			</div>
 		</form>
+		<section class="pinned-notes-list"></section>
 		<section class="notes-list"></section>
+		<script type="text/javascript" src="./NoteUi.js"></script>
+		<script type="text/javascript" src="./NotesLs.js"></script>
 		<script type="text/javascript" src="./app.js"></script>
 	</body>
 </html>

@@ -77,26 +77,31 @@ header {
 
 input[type='text'] {
 	font-size: 2rem;
-	padding: 0 2%;
+	padding: 2%;
+	margin: 0.5rem 0;
 	height: 5vh;
+	background-color: var(--dark) !important;
 	outline: none;
 	border: none;
 }
-.message,
-.title {
-	background-color: var(--dark);
+#message,
+#message:focus,
+#title,
+#title:focus {
+	background-color: var(--dark) !important;
 	width: 100%;
 	transition: all 0.2s ease;
 }
 
-.title {
+#title {
 	margin: 0;
 }
 .color-pick {
 	position: relative;
 	padding-left: 5px;
-
 	display: flex;
+	align-items: center;
+	width: 100%;
 }
 .color-pick > div {
 	cursor: pointer;
@@ -119,11 +124,9 @@ input[type='text'] {
 	border: 1px solid #fff;
 	background-color: var(--dark);
 }
-
 .sub {
 	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+	right: 5px;
 	cursor: pointer;
 	display: block;
 	padding: 5px 10px;
@@ -142,11 +145,12 @@ input[type='text'] {
 	margin: 0 10%;
 	display: flex;
 	flex-wrap: wrap;
+	transition: all 0.3s ease;
 }
 .note {
 	word-break: break-word;
 	letter-spacing: 0.13rem;
-	margin: 1rem;
+	margin: 0.5rem;
 	background-color: var(--dark);
 	width: 250px;
 	min-height: 250px;
@@ -158,11 +162,13 @@ input[type='text'] {
 	border-radius: 6px;
 	padding: 0.5rem;
 	position: relative;
+	transition: all 0.5s ease;
 }
 .note > h4 {
 	text-align: center;
 	display: block;
 	width: 80%;
+	min-height: 5%;
 	margin: 0 10%;
 	font-size: 2rem;
 }
