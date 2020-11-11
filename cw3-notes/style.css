@@ -160,6 +160,7 @@ input[type='radio']:focus + label {
 	transition: all 0.3s ease;
 }
 .note {
+	order: 10000;
 	word-break: break-word;
 	letter-spacing: 0.13rem;
 	margin: 0.5rem;
@@ -176,6 +177,9 @@ input[type='radio']:focus + label {
 	padding: 0.5rem;
 	position: relative;
 	transition: all 0.5s ease;
+}
+.note.active {
+	order: 1 !important;
 }
 .note > h4 {
 	text-align: center;
@@ -205,6 +209,9 @@ input[type='radio']:focus + label {
 	left: 5px;
 	cursor: pointer;
 	transition: all 0.3s ease;
+}
+.pin.active {
+	color: var(--green);
 }
 .pin:hover {
 	color: var(--green);

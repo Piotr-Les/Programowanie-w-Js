@@ -1,9 +1,9 @@
 class NoteUi {
-	constructor(message = '', title = '', color, date) {
+	constructor(message = '', title = '', color, pinned = false, date) {
 		this.message = message;
 		this.title = title;
 		this.color = color;
-		this.pinned = false;
+		this.pinned = pinned;
 		this.date = date;
 	}
 	static getFieldFromId(id) {
@@ -30,6 +30,31 @@ class NoteUi {
 	}
 	static setNoteColor(note, color) {
 		note.style.borderColor = `#${color}`;
+	}
+	static pinNote(target, arr) {
+		target.classList.toggle('active');
+		let parent = target.parentElement;
+		parent.classList.toggle('active');
+		if (target.classList.contains('active')) {
+			let id = target.previousElementSibling.previousElementSibling.textContent;
+
+			arr.forEach((note) => {
+				if (note.date == id) {
+					NotesLs.removeNoteFromLs(id);
+					note.pinned = true;
+					NotesLs.addNotesToLs(note);
+				}
+			});
+		} else {
+			let id = target.previousElementSibling.previousElementSibling.textContent;
+			arr.forEach((note) => {
+				if (note.date == id) {
+					NotesLs.removeNoteFromLs(id);
+					note.pinned = false;
+					NotesLs.addNotesToLs(note);
+				}
+			});
+		}
 	}
 	createNotePin() {
 		const pin = document.createElement('i');
@@ -117,11 +142,20 @@ class NoteUi {
 		return noteDiv;
 	}
 	static addNoteUiToHtml(note) {
-		const noteContainer = document.querySelector('.notes-list');
+		let noteContainer = document.querySelector('.notes-list');
 		noteContainer.appendChild(note);
 	}
 	addNoteToUi() {
 		let note = this.createNoteUi();
+		if (this.pinned) {
+			let pin = note.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
+			pin.classList.add('active');
+			note.classList.add('active');
+		} else {
+			let pin = note.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
+			pin.classList.remove('active');
+			note.classList.remove('active');
+		}
 		NoteUi.addNoteUiToHtml(note);
 	}
 	static removeNoteFromUi(e) {

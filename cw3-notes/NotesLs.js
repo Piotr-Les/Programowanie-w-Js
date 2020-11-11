@@ -16,7 +16,13 @@ class NotesLs extends NoteUi {
 	static displayNotesFromLs() {
 		const notes = NotesLs.getNotesFromLs();
 		notes.forEach((note) => {
-			let noteObj = new NoteUi(note.message, note.title, note.color, note.date);
+			let noteObj = new NoteUi(
+				note.message,
+				note.title,
+				note.color,
+				note.pinned,
+				note.date
+			);
 			noteObj.addNoteToUi();
 		});
 	}
