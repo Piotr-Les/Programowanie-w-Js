@@ -1,7 +1,5 @@
 class NoteUi {
 	constructor(message = '', title = '', date) {
-		// zrobićpoprawne id
-		// this.id = id;
 		this.message = message;
 		this.title = title;
 		this.pinned = false;
@@ -57,6 +55,8 @@ class NoteUi {
 		let day = date.getDate();
 		let hours = date.getHours();
 		let minutes = setMinutes(date);
+		let seconds = setSeconds(date);
+
 		function setMinutes(date) {
 			if (date.getMinutes() < 10) {
 				return `0${date.getMinutes()}`;
@@ -64,7 +64,14 @@ class NoteUi {
 				return date.getMinutes();
 			}
 		}
-		let dateStr = `${year}/${month}/${day} ${hours}:${minutes}`;
+		function setSeconds(date) {
+			if (date.getSeconds() < 10) {
+				return `0${date.getSeconds()}`;
+			} else {
+				return date.getSeconds();
+			}
+		}
+		let dateStr = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
 		return dateStr;
 	}
 	createNoteDate() {
@@ -83,8 +90,8 @@ class NoteUi {
 			noteTitle,
 			noteMessage,
 			noteDate,
-			notePin,
 			noteDel,
+			notePin,
 		];
 		return noteElementsArray;
 	}

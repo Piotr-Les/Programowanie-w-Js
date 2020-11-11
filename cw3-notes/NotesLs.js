@@ -1,7 +1,6 @@
 class NotesLs extends NoteUi {
 	static addNotesToLs(note) {
 		const notes = NotesLs.getNotesFromLs();
-		console.log(notes);
 		notes.push(note);
 		localStorage.setItem('notes', JSON.stringify(notes));
 	}
@@ -17,9 +16,17 @@ class NotesLs extends NoteUi {
 	static displayNotesFromLs() {
 		const notes = NotesLs.getNotesFromLs();
 		notes.forEach((note) => {
-			let noteObj = new NoteUi(note.id, note.message, note.title, note.date);
+			let noteObj = new NoteUi(note.message, note.title, note.date);
 			noteObj.addNoteToUi();
 		});
 	}
-	static removeNoteFromLs() {}
+	static removeNoteFromLs(target) {
+		const notes = NotesLs.getNotesFromLs();
+		notes.forEach((note, index) => {
+			if (note.date == target) {
+				notes.splice(index, 1);
+			}
+		});
+		localStorage.setItem('notes', JSON.stringify(notes));
+	}
 }

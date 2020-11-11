@@ -24,6 +24,7 @@ const noteCont = document.querySelector('.notes-list');
 noteCont.addEventListener('click', (e) => {
 	if (e.target.classList.contains('close')) {
 		NoteUi.removeNoteFromUi(e);
+		NotesLs.removeNoteFromLs(e.target.previousElementSibling.textContent);
 	} else if (e.target.classList.contains('pin')) {
 	}
 });
