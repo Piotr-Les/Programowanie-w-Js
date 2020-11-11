@@ -147,12 +147,11 @@ class NoteUi {
 	}
 	addNoteToUi() {
 		let note = this.createNoteUi();
+		let pin = note.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
 		if (this.pinned) {
-			let pin = note.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
 			pin.classList.add('active');
 			note.classList.add('active');
 		} else {
-			let pin = note.firstChild.nextSibling.nextSibling.nextSibling.nextSibling;
 			pin.classList.remove('active');
 			note.classList.remove('active');
 		}
