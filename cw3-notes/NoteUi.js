@@ -1,7 +1,8 @@
 class NoteUi {
-	constructor(message = '', title = '', date) {
+	constructor(message = '', title = '', color, date) {
 		this.message = message;
 		this.title = title;
+		this.color = color;
 		this.pinned = false;
 		this.date = date;
 	}
@@ -16,6 +17,19 @@ class NoteUi {
 		arr.forEach((arrElem) => {
 			parent.appendChild(arrElem);
 		});
+	}
+	static getNoteColor() {
+		let colorRadios = document.getElementsByName('color');
+		let colorVal;
+		colorRadios.forEach((color) => {
+			if (color.checked) {
+				colorVal = color.value;
+			}
+		});
+		return colorVal;
+	}
+	static setNoteColor(note, color) {
+		note.style.borderColor = `#${color}`;
 	}
 	createNotePin() {
 		const pin = document.createElement('i');
@@ -99,6 +113,7 @@ class NoteUi {
 	createNoteUi() {
 		const noteDiv = this.createNoteDiv();
 		NoteUi.appendNoteElem(noteDiv, this.getNoteElements());
+		NoteUi.setNoteColor(noteDiv, this.color);
 		return noteDiv;
 	}
 	static addNoteUiToHtml(note) {
@@ -106,7 +121,8 @@ class NoteUi {
 		noteContainer.appendChild(note);
 	}
 	addNoteToUi() {
-		NoteUi.addNoteUiToHtml(this.createNoteUi());
+		let note = this.createNoteUi();
+		NoteUi.addNoteUiToHtml(note);
 	}
 	static removeNoteFromUi(e) {
 		e.target.parentElement.remove();

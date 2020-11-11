@@ -28,10 +28,14 @@
 			<input placeholder="Create a note..." id="message" type="text" />
 			<input placeholder="Title" id="title" type="text" />
 			<div class="color-pick">
-				<div data-color="d50000" class="color"></div>
-				<div data-color="1b5e20" class="color"></div>
-				<div data-color="0d47a1" class="color"></div>
-				<div data-color="2f2f2f" class="color"></div>
+				<input type="radio" name="color" id="d50000"value="d50000"  class="color"></input>
+				<label for="d50000"></label>
+				<input type="radio" name="color" id="1b5e20" value="1b5e20" class="color"></input>
+				<label for="1b5e20"></label>
+				<input type="radio" name="color"  id="0d47a1" value="0d47a1" class="color"></input>
+				<label for="0d47a1"></label>
+				<input type="radio" name="color" id="2f2f2f" value="2f2f2f" checked class="color"></input>
+				<label for="2f2f2f"></label>
 				<input class="sub" type="submit" value="Save" />
 			</div>
 		</form>

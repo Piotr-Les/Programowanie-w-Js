@@ -13,7 +13,13 @@ function onPlusClick() {
 function onFormSubmit(e) {
 	const message = NoteUi.getFieldFromId('message');
 	const title = NoteUi.getFieldFromId('title');
-	const note = new NoteUi(message.value, title.value, NoteUi.getNoteDate());
+	const color = NoteUi.getNoteColor();
+	const note = new NoteUi(
+		message.value,
+		title.value,
+		color,
+		NoteUi.getNoteDate()
+	);
 	note.addNoteToUi();
 
 	NotesLs.addNotesToLs(note);
