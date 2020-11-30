@@ -5,3 +5,19 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+:root {
+	--dark: #2f2f2f;
+	--grey: #757575;
+	--light: #fffbfe;
+	--green: #0e7c7b;
+	--pink: #ff007f;
+	--purple: #8b80f9;
+	font-size: 10px;
+}
+body {
+	width: 100%;
+}
+#canv {
+	display: block;
+	background-color: var(--dark);
+}
