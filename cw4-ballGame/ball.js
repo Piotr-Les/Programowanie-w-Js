@@ -1,8 +1,6 @@
-class Ball {
-	constructor(radius, x, y) {
-		this.radius = radius;
-		this.x = x;
-		this.y = y;
+class Ball extends Sphere {
+	constructor(radius, x, y, color) {
+		super(radius, x, y, color);
 		this.dx = 0;
 		this.dy = 0;
 	}
@@ -20,13 +18,6 @@ class Ball {
 		if (this.y + this.radius > canvas.height) {
 			this.y = canvas.height - this.radius;
 		}
-	}
-
-	drawPlayerOnCanvas(canvasContext) {
-		canvasContext.beginPath();
-		canvasContext.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-		canvasContext.fillStyle = 'purple';
-		canvasContext.fill();
 	}
 
 	move() {
