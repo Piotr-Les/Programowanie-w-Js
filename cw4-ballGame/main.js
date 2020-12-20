@@ -12,15 +12,17 @@ initHoles();
 function initHoles() {
 	holes = [];
 	for (let i = 0; i < 10; i++) {
-		let x = Math.random() * innerWidth;
-		let y = Math.random() * innerHeight;
 		let radius = 20;
+		let x = randFromRange(radius, window.innerWidth - radius);
+		let y = randFromRange(radius, window.innerHeight - radius);
 		let color = 'red';
+
 		if (i != 0) {
 			for (let j = 0; j < holes.length; j++) {
 				if (Sphere.getDistance(x, y, holes[j].x, holes[j].y) - radius * 2 < 0) {
-					x = Math.random() * innerWidth;
-					y = Math.random() * innerHeight;
+					x = randFromRange(radius, window.innerWidth - radius);
+					y = randFromRange(radius, window.innerHeight - radius);
+					j = -1;
 				}
 			}
 		}
