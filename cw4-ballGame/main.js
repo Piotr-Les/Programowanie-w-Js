@@ -1,12 +1,7 @@
 const canvas = document.getElementById('canv');
 let ctx = canvas.getContext('2d');
 
-const player = new Ball(
-	15,
-	window.innerWidth / 2,
-	window.innerHeight / 2,
-	'purple'
-);
+const player = new Ball(15, 20, 20, 'purple');
 let holes;
 initHoles();
 function initHoles() {
@@ -15,7 +10,7 @@ function initHoles() {
 		let radius = 20;
 		let x = randFromRange(radius, window.innerWidth - radius);
 		let y = randFromRange(radius, window.innerHeight - radius);
-		let color = 'red';
+		let color = 'teal';
 
 		if (i != 0) {
 			for (let j = 0; j < holes.length; j++) {
@@ -37,8 +32,15 @@ function updateCanvas() {
 	player.restrictBorders(canvas, 'red');
 	player.move();
 	//init the HOLES
-	holes.forEach((hole) => {
+	holes.forEach((hole, index) => {
 		hole.drawObjectOnCanvas(ctx);
+		if (
+			Sphere.getDistance(player.x, player.y, hole.x, hole.y) -
+				player.radius * 2 <
+			0
+		) {
+			holes.splice(index, 1);
+		}
 	});
 	requestAnimationFrame(updateCanvas);
 
