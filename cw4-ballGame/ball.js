@@ -3,6 +3,7 @@ class Ball extends Sphere {
 		super(radius, x, y, color);
 		this.dx = 0;
 		this.dy = 0;
+		this.index = 0;
 	}
 
 	restrictBorders(canvas) {
