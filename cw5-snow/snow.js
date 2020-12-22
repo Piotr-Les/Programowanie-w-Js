@@ -4,7 +4,7 @@ class Snow {
 		this.y = random(-10, -window.innerHeight - 10);
 
 		this.dx = 2;
-		this.dy = random(1, 2.5);
+		this.dy = 0.5;
 		this.radius = random(2, 5);
 		this.color = '#fff';
 	}
@@ -15,7 +15,8 @@ class Snow {
 		canvasContext.fill();
 	}
 	move() {
-		this.y += this.dy;
+		let acc = this.dy * this.radius;
+		this.y += acc;
 		if (this.y > window.innerHeight) {
 			this.y = random(-10, -window.innerHeight - 10);
 		}
