@@ -4,7 +4,7 @@ let ctx = canvas.getContext('2d');
 let snowArray = [];
 initSnow();
 function initSnow() {
-	for (let i = 0; i < 200; i++) {
+	for (let i = 0; i < 250; i++) {
 		snowArray.push(new Snow());
 	}
 }
