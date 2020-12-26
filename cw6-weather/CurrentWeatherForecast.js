@@ -7,6 +7,7 @@ class CurrentWeatherForecast {
 		this.description = description;
 		this.icon = icon;
 	}
+
 	addForecastToUi() {
 		const mainCont = document.querySelector('.main-container');
 		let FCont = document.createElement('div');

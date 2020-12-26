@@ -60,3 +60,9 @@ document.addEventListener('click', (e) => {
 		Storage.removeItemFromLs(e.target.className, 'items');
 	}
 });
+
+//DOROBIĆ
+// setInterval(updateForecast, 1000);
+// function updateForecast() {
+// 	console.log('jaja');
+// }
