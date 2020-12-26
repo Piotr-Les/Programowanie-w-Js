@@ -3,9 +3,21 @@ const api = {
 	defUrl: 'https://api.openweathermap.org/data/2.5/',
 };
 let items;
-document.addEventListener('load', initApp);
+
+document.addEventListener('DOMContentLoaded', initApp);
 function initApp() {
-	items = Storage.getItemsFromLs('items');
+	let items = Storage.getItemsFromLs('items');
+	items.forEach((item) => {
+		const cWF = new CurrentWeatherForecast(
+			item.id,
+			item.name,
+			item.temp,
+			item.humidity,
+			item.description,
+			item.icon
+		);
+		cWF.addForecastToUi();
+	});
 }
 document.addEventListener('submit', (e) => onQuerySubmit(e));
 
@@ -20,13 +32,15 @@ function onQuerySubmit(e) {
 			.then((res) => initObject(res));
 	}
 	function initObject(res) {
+		items = Storage.getItemsFromLs('items');
 		console.log(res);
 		let name = `${res.name}, ${res.sys.country}`;
-		let temp = res.main.temp;
-		let humidity = res.main.humidity;
+		let temp = `${Math.round(res.main.temp - 273.15)}°C`;
+		let humidity = `Humidity: ${res.main.humidity}%`;
 		let description = res.weather[0].description;
-		let icon = res.weather[0].icon;
+		let icon = `http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`;
 		let item = new CurrentWeatherForecast(
+			items.length,
 			name,
 			temp,
 			humidity,
@@ -34,6 +48,15 @@ function onQuerySubmit(e) {
 			icon
 		);
 		Storage.addItemToLs(item, 'items');
+		item.addForecastToUi();
 		console.log(item);
 	}
 }
+
+document.addEventListener('click', (e) => {
+	if (e.target.classList.contains('cancel')) {
+		CurrentWeatherForecast.removeItemFromUi(e.target.parentElement);
+		console.log(e.target.className);
+		Storage.removeItemFromLs(e.target.className, 'items');
+	}
+});

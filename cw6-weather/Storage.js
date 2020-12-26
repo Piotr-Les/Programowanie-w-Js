@@ -1,6 +1,6 @@
 class Storage {
 	static addItemToLs(item, name) {
-		const items = Storage.getItemsFromLs();
+		const items = Storage.getItemsFromLs(name);
 		items.push(item);
 		localStorage.setItem(`${name}`, JSON.stringify(items));
 	}
@@ -13,26 +13,14 @@ class Storage {
 		}
 		return items;
 	}
-	// static displayItemsFromLs() {
-	// 	const notes = Storage.getNotesFromLs();
-	// 	notes.forEach((note) => {
-	// 		let noteObj = new NoteUi(
-	// 			note.message,
-	// 			note.title,
-	// 			note.color,
-	// 			note.pinned,
-	// 			note.date
-	// 		);
-	// 		noteObj.addNoteToUi();
-	// 	});
-	// }
-	// static removeItemFromLs(target) {
-	// 	const notes = Storage.getNotesFromLs();
-	// 	notes.forEach((note, index) => {
-	// 		if (note.date == target) {
-	// 			notes.splice(index, 1);
-	// 		}
-	// 	});
-	// 	localStorage.setItem('notes', JSON.stringify(notes));
-	// }
+
+	static removeItemFromLs(target, name) {
+		let items = Storage.getItemsFromLs(name);
+		items.forEach((item, index) => {
+			if (`cancel ${item.id}` == target) {
+				items.splice(index, 1);
+			}
+		});
+		localStorage.setItem(`${name}`, JSON.stringify(items));
+	}
 }
