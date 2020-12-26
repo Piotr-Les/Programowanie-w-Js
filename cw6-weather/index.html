@@ -3,10 +3,31 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="style.css" />
 		<title>Weather</title>
 	</head>
 	<body>
-		<script src="app.js"></script>
+		<form class="input-container">
+			<h2 class="intro">What's the weather in...?</h2>
+			<input
+				type="text"
+				placeholder="City name"
+				name="city"
+				id="city"
+				class="query-input"
+			/>
+			<input class="query-submit" value="Search" type="submit" />
+		</form>
+
+		<div class="main-container"></div>
+
+		<script type="text/javascript" src="CurrentWeatherForecast.js"></script>
+		<script type="text/javascript" src="Storage.js"></script>
+		<script type="text/javascript" src="app.js"></script>
 	</body>
 </html>
