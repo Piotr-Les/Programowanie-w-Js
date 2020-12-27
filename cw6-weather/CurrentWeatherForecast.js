@@ -7,7 +7,12 @@ class CurrentWeatherForecast {
 		this.description = description;
 		this.icon = icon;
 	}
-
+	static ClearUi() {
+		const mainCont = document.querySelector('.main-container');
+		while (mainCont.firstChild) {
+			mainCont.removeChild(mainCont.firstChild);
+		}
+	}
 	addForecastToUi() {
 		const mainCont = document.querySelector('.main-container');
 		let FCont = document.createElement('div');

@@ -23,4 +23,8 @@ class Storage {
 		});
 		localStorage.setItem(`${name}`, JSON.stringify(items));
 	}
+	static clearLs(name) {
+		items = [];
+		localStorage.setItem(`${name}`, JSON.stringify(items));
+	}
 }
